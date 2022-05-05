@@ -4,4 +4,5 @@ export type postType = {
   excerpt: string;
   date: string;
   slug: string;
+  content?: string;
 };

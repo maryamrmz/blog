@@ -2,9 +2,14 @@ import { FC } from 'react';
 
 import PostContent from 'components/posts/post-detail/post-content';
 import { getPostData, getPostsFiles } from 'lib/posts-util';
+import { postType } from 'shared/postType';
 
-const PostDetail: FC = () => {
-  return <PostContent />;
+interface PostDetailProps {
+  post: postType;
+}
+
+const PostDetail: FC<PostDetailProps> = ({ post }) => {
+  return <PostContent post={post} />;
 };
 
 export const getStaticProps = (context: { params: { slug: string } }) => {
