@@ -1,19 +1,25 @@
 import { FC } from 'react';
 
 import AllPosts from 'components/posts/all-posts';
+import { getAllPosts } from 'lib/posts-util';
+import { postType } from 'shared/postType';
 
-const DUMMY_POSTS = [
-  {
-    title: 'NextJS',
-    image: 'next.png',
-    excerpt: 'NextJS is a React framework for production',
-    date: '2022-04-22',
-    slug: 'nextJS',
-  },
-];
+interface AllPostsPageProps {
+  posts: postType[];
+}
 
-const AllPostsPage: FC = () => {
-  return <AllPosts posts={DUMMY_POSTS} />;
+const AllPostsPage: FC<AllPostsPageProps> = ({ posts }) => {
+  return <AllPosts posts={posts} />;
+};
+
+export const getStaticProps = () => {
+  const allPosts = getAllPosts();
+
+  return {
+    props: {
+      posts: allPosts,
+    },
+  };
 };
 
 export default AllPostsPage;

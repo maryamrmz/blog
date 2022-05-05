@@ -2,24 +2,30 @@ import type { NextPage } from 'next';
 
 import Hero from 'components/home/hero';
 import FeaturedPosts from 'components/home/featured-posts';
+import { getFeaturedPosts } from 'lib/posts-util';
+import { postType } from 'shared/postType';
 
-const DUMMY_POSTS = [
-  {
-    title: 'NextJS',
-    image: 'next.png',
-    excerpt: 'NextJS is a React framework for production',
-    date: '2022-04-22',
-    slug: 'nextJS',
-  },
-];
+interface HomeProps {
+  posts: postType[];
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
       <Hero />
-      <FeaturedPosts posts={DUMMY_POSTS} />
+      <FeaturedPosts posts={posts} />
     </>
   );
+};
+
+export const getStaticProps = () => {
+  const featuredPosts = getFeaturedPosts();
+
+  return {
+    props: {
+      posts: featuredPosts,
+    },
+  };
 };
 
 export default Home;
