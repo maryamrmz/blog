@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Head from 'next/head';
 
 import AllPosts from 'components/posts/all-posts';
 import { getAllPosts } from 'lib/posts-util';
@@ -9,7 +10,18 @@ interface AllPostsPageProps {
 }
 
 const AllPostsPage: FC<AllPostsPageProps> = ({ posts }) => {
-  return <AllPosts posts={posts} />;
+  return (
+    <>
+      <Head>
+        <title>All Posts</title>
+        <meta
+          name="description"
+          content="A list of all programming-related tutorials and posts!"
+        />
+      </Head>
+      <AllPosts posts={posts} />;
+    </>
+  );
 };
 
 export const getStaticProps = () => {

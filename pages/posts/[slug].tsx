@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Head from 'next/head';
 
 import PostContent from 'components/posts/post-detail/post-content';
 import { getPostData, getPostsFiles } from 'lib/posts-util';
@@ -9,7 +10,15 @@ interface PostDetailProps {
 }
 
 const PostDetail: FC<PostDetailProps> = ({ post }) => {
-  return <PostContent post={post} />;
+  return (
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+      </Head>
+      <PostContent post={post} />;
+    </>
+  );
 };
 
 export const getStaticProps = (context: { params: { slug: string } }) => {
