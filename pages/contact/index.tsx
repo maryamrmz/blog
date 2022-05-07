@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC } from 'react';
+
+import ContactForm from 'components/contact/contact-form';
 
 const Contact: FC = () => {
-    return <div>contact</div>;
+  return <ContactForm />;
 };
 
 export default Contact;
