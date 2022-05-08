@@ -12,7 +12,7 @@ const Notification: FC<NotificationProps> = ({ title, status, message }) => {
 
   useEffect(() => {
     setDomReady(true);
-  });
+  }, []);
 
   let statusClasses = '';
 
