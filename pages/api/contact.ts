@@ -41,10 +41,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
     let client;
 
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.ntrwp.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     try {
-      client = await MongoClient.connect(
-        'mongodb+srv://maryam:pzTChnPR2HEfeCD2@cluster0.odwod.mongodb.net/my-blog?retryWrites=true&w=majority'
-      );
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database.' });
       return;
