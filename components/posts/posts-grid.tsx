@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import PostItem from '../post-item';
+import PostItem from './post-item';
 import { postType } from 'shared/postType';
 
 interface PostsGridProps {

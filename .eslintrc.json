@@ -1,5 +1,9 @@
 {
   "extends": "next/core-web-vitals",
   "react/no-unescaped-entities": "off",
-  "react/no-children-prop": "off"
+  "react/no-children-prop": "off",
+  "env": {
+    "browser": true,
+    "jest": true
+  }
 }

@@ -2,7 +2,7 @@ import { FC, FormEvent, useEffect, useState } from 'react';
 
 import Notification from 'components/ui/notification';
 
-const sendContactData = async (contactDetails: {
+export const sendContactData = async (contactDetails: {
   email: string;
   name: string;
   message: string;
@@ -110,6 +110,7 @@ const ContactForm: FC = () => {
               value={enteredEmail}
               onChange={(event) => setEnteredEmail(event.target.value)}
               className="w-full resize-none rounded border-gray-400 bg-gray-50 p-2"
+              data-testid="email"
             />
           </div>
           <div className="min-w-[10rem] flex-1">
@@ -124,6 +125,7 @@ const ContactForm: FC = () => {
               value={enteredName}
               onChange={(event) => setEnteredName(event.target.value)}
               className="w-full resize-none rounded border-gray-400 bg-gray-50 p-2"
+              data-testid="name"
             />
           </div>
         </div>
@@ -138,9 +140,13 @@ const ContactForm: FC = () => {
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}
             className="w-full resize-none rounded border-gray-400 bg-gray-50 p-2"
+            data-testid="message"
           />
           <div className="m-4 text-right">
-            <button className="rounded border-gray-700 bg-green-700 p-2 text-gray-50 hover:border-green-500 hover:bg-gray-500">
+            <button
+              className="rounded border-gray-700 bg-green-700 p-2 text-gray-50 hover:border-green-500 hover:bg-gray-500"
+              data-testid="submit"
+            >
               Send Message
             </button>
           </div>
