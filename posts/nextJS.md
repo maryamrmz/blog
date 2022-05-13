@@ -7,12 +7,56 @@
     isFeatured: true
 ---
 
-# This is a title
+# Difference between `getStaticProps` and `getServerSideProps`
 
-Getting started with [NextJS](https://nextjs.org/)
+The main difference between them is **when they are ran**.
+
+_getServerSideProps_ is ran when every new request is made to the page.
 
 ```
-I'm Code!
+export const getServerSideProps = async (context) => {
+    const {postId} = context.params
+    const post = await getPosts(postId)
+
+    return {
+        props: {
+           post
+        }
+    }
+
+}
+
+export const Post = ({ post }) => {
+    return (
+        <div>
+            <h1>{post.title}</h1>
+        </div>
+    )
+}
 ```
 
-![nnnn](nextJS.png)
+_getStaticProps_ is ran at build time.
+
+```
+export const getStaticProps = async () => {
+    const blogPosts = await getBlogPosts()
+
+    return {
+        props: {
+            blogPosts
+        }
+    }
+}
+
+export const Home = ({ blogPosts }) => {
+    return (
+        <div>
+            {blogPosts.map(post => (
+                <h1>{post.name}</h1>
+            ))}
+        </div>
+    )
+}
+```
+
+![nextJS](nextJS.png)
