@@ -1,6 +1,6 @@
 ---
     title: 'NextJS'
-    image: 'next.png'
+    image: 'nextJS.png'
     excerpt: 'NextJS is a React framework for production'
     date: '2022-04-22'
     slug: 'nextJS'
