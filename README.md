@@ -1,4 +1,4 @@
-# Blog Repository
+# Blog
 
 This repository contains the source code and content for a personal blog. The blog is designed to share insights, thoughts, and experiences on various topics, including technology, programming, and personal development.
 
