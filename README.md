@@ -4,9 +4,9 @@ This repository contains the source code and content for a personal blog. The bl
 
 ### Table of Contents
 
-[Installation](#Installation)
-[Usage](#usage)
-[Contributing](#Contributing)
+[Installation](#Installation)\
+[Usage](#usage)\
+[Contributing](#Contributing)\
 [License](#License)
 
 ## Installation
