@@ -9,6 +9,8 @@ This repository contains the source code and content for a personal blog. The bl
 [Contributing](#Contributing)
 [License](#License)
 
+## Installation
+
 To run this blog locally, please follow the steps below:
 
 1. Clone this repository to your local machine using the following command:
@@ -69,5 +71,6 @@ Contributions to this blog are welcome! If you wish to contribute, please follow
 
 7. Wait for the maintainers to review your pull request and address any requested changes.
 
-License
+## License
+
 This project is licensed under the MIT License
